@@ -39,7 +39,7 @@ def transform(soup):
 
 
 joblist = []
-for i in range(0, 20, 10):
+for i in range(0, 10, 10):
     c = extract(0)
     transform(c)
 
@@ -47,5 +47,5 @@ df = pd.DataFrame(joblist, columns=["title", "company", "location", "salary", "s
 df_json_dict = json.loads(df.to_json(orient = 'records'))
 print(df_json_dict)
 
-#for i in range(len(df_json_dict)):
-    #requests.post('http://127.0.0.1:5000/jobs', json=df_json_dict[i])
+for i in range(len(df_json_dict)):
+    requests.post('http://127.0.0.1:5000/jobs', json=df_json_dict[i])

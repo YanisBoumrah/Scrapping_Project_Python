@@ -1,4 +1,3 @@
-from settings import *
 import json
 
 from flask import Flask, request, Response, jsonify
